@@ -14,8 +14,9 @@ app.get('/api/mock', (req, res) => {
 
 app.post('/api/mock/user', (req, res) => {
 	const user = req.body.user;
+	const newId = data.length + 1;
 	const newUser = {
-		id: data.length + 1,
+		id: newId,
 		...user
 	}
 
@@ -23,7 +24,7 @@ app.post('/api/mock/user', (req, res) => {
 
 	res
 		.status(200)
-		.json(data);
+		.json({ id: newId });
 
 })
 
